@@ -14,7 +14,15 @@
     <bean id="initConfig1" class="com.cloudy.day01.InitConfig1" />
     <bean id="initConfig2" class="com.cloudy.day01.InitConfig2" />
 
-    <bean id="userEntity" class="com.cloudy.day01.UserEntity" />
+    <bean id="userEntity" class="com.cloudy.day01.UserEntity" >
+        <!--<constructor-arg name="studentEntity" ref="studentEntity"/>-->
+        <property name="studentEntity" ref="studentEntity"></property>
+    </bean>
+
+    <bean id="studentEntity" class="com.cloudy.day01.StudentEntity" >
+        <!--<constructor-arg name="userEntity" ref="userEntity"/>-->
+        <property name="userEntity" ref="userEntity"></property>
+    </bean>
 
     <bean id="myInterceptor" class="com.cloudy.day01.MyInterceptor" />
     <bean id="myInterceptor1" class="com.cloudy.day01.MyInterceptor1" />
