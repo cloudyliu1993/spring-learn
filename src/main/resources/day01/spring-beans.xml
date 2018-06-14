@@ -14,6 +14,9 @@
     <bean id="initConfig1" class="com.cloudy.day01.InitConfig1" />
     <bean id="initConfig2" class="com.cloudy.day01.InitConfig2" />
 
+    <bean id="beanPost1" class="com.cloudy.day01.BeanPost1" />
+    <bean id="beanPost" class="com.cloudy.day01.BeanPost" />
+
     <bean id="userEntity" class="com.cloudy.day01.UserEntity" >
         <!--<constructor-arg name="studentEntity" ref="studentEntity"/>-->
         <property name="studentEntity" ref="studentEntity"></property>
@@ -27,24 +30,25 @@
     <bean id="myInterceptor" class="com.cloudy.day01.MyInterceptor" />
     <bean id="myInterceptor1" class="com.cloudy.day01.MyInterceptor1" />
 
-    <aop:config>
-        <aop:aspect id="myAspect" ref="myInterceptor" order="2">
-            <aop:pointcut id="myPointCut" expression="execution(* com.cloudy.day01.UserEntity.*(..))" />
-            <aop:before pointcut-ref="myPointCut" method="doAccessCheck"/>
-            <aop:after pointcut-ref="myPointCut" method="doAfter" />
-            <aop:after-returning pointcut-ref="myPointCut" method="doAfterReturning" />
-            <aop:around method="doAround" pointcut-ref="myPointCut" />
-            <aop:after-throwing pointcut-ref="myPointCut" method="doAfterThrowing" />
-        </aop:aspect>
-        <aop:aspect id="myAspect1" ref="myInterceptor1" order="1">
-            <aop:pointcut id="myPointCut" expression="execution(* com.cloudy.day01.UserEntity.*(..))" />
-            <aop:before pointcut-ref="myPointCut" method="doAccessCheck"/>
-            <aop:after pointcut-ref="myPointCut" method="doAfter" />
-            <aop:after-returning pointcut-ref="myPointCut" method="doAfterReturning" />
-            <aop:around method="doAround" pointcut-ref="myPointCut" />
-            <aop:after-throwing pointcut-ref="myPointCut" method="doAfterThrowing" />
-        </aop:aspect>
-    </aop:config>
+
+    <!--<aop:config>-->
+        <!--<aop:aspect id="myAspect" ref="myInterceptor" order="2">-->
+            <!--<aop:pointcut id="myPointCut" expression="execution(* com.cloudy.day01.UserEntity.*(..))" />-->
+            <!--<aop:before pointcut-ref="myPointCut" method="doAccessCheck"/>-->
+            <!--<aop:after pointcut-ref="myPointCut" method="doAfter" />-->
+            <!--<aop:after-returning pointcut-ref="myPointCut" method="doAfterReturning" />-->
+            <!--<aop:around method="doAround" pointcut-ref="myPointCut" />-->
+            <!--<aop:after-throwing pointcut-ref="myPointCut" method="doAfterThrowing" />-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect id="myAspect1" ref="myInterceptor1" order="1">-->
+            <!--<aop:pointcut id="myPointCut" expression="execution(* com.cloudy.day01.UserEntity.*(..))" />-->
+            <!--<aop:before pointcut-ref="myPointCut" method="doAccessCheck"/>-->
+            <!--<aop:after pointcut-ref="myPointCut" method="doAfter" />-->
+            <!--<aop:after-returning pointcut-ref="myPointCut" method="doAfterReturning" />-->
+            <!--<aop:around method="doAround" pointcut-ref="myPointCut" />-->
+            <!--<aop:after-throwing pointcut-ref="myPointCut" method="doAfterThrowing" />-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
 
 </beans>
